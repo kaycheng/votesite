@@ -1,0 +1,28 @@
+<%= form_for candidate do |f| %>
+  <!-- Using candidate(local valuable) is a negetive function to send data -->
+  <div class="form-group">
+    <%= f.label :name, "姓名" %>
+    <%= f.text_field :name %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :party, "政黨" %>
+    <%= f.text_field :party %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :age, "年齡" %>
+    <%= f.text_field :age %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :politics, "政見" %>
+    <%= f.text_area :politics %>
+  </div>
+
+  <div class="form-group">
+    <%= f.submit %>
+  </div>
+<% end %>
+
+<%= link_to 'Back', root_path %>

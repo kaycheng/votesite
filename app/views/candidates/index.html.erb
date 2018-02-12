@@ -1,0 +1,34 @@
+<h1>候選人名單</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>投票</th>
+      <th>候選人姓名</th>
+      <th>政黨</th>
+      <th>政見</th>
+      <th>得票數</th>
+      <th>處理</th> 
+    </tr>
+  </thead>
+  <tbody>
+    <% @candidates.each do |candidate| %>
+      <tr>
+        <td><%= link_to "投他投他", "#" %></td> 
+        <td><%= candidate.name %>(年齡： <%= candidate.age %>歲)</td>
+        <td><%= candidate.party %></td>
+        <td><%= candidate.politics %></td>
+        <td><%= candidate.votes %></td>
+        <td>
+          <%= link_to 'Edit', edit_candidate_path(candidate) %> | 
+          <%= link_to 'Delete', candidate_path(candidate), method: :delete, data: {confirm: "Are you sure? "} %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to "建立候選人", new_candidate_path %> | 
+
+
+  
