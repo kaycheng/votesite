@@ -14,11 +14,11 @@
   <tbody>
     <% @candidates.each do |candidate| %>
       <tr>
-        <td><%= link_to "投他投他", "#" %></td> 
+        <td><%= link_to "投這位", vote_candidate_path(candidate),method: :post, data: {confirm: "Are you sure?"} %></td> 
         <td><%= candidate.name %>(年齡： <%= candidate.age %>歲)</td>
         <td><%= candidate.party %></td>
         <td><%= candidate.politics %></td>
-        <td><%= candidate.votes %></td>
+        <td><%= candidate.vote_logs.count %></td>
         <td>
           <%= link_to 'Edit', edit_candidate_path(candidate) %> | 
           <%= link_to 'Delete', candidate_path(candidate), method: :delete, data: {confirm: "Are you sure? "} %>
