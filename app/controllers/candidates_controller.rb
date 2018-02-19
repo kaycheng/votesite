@@ -41,7 +41,6 @@ class CandidatesController < ApplicationController
   end
 
   def vote
-    @candidate.increment(:votes)
     @candidate.vote_logs.create(ip_address: request.remote_ip) if @candidate
     redirect_back(fallback_location: root_path, notice: "Great!")
     # if the code have curly please let notice in curly.
