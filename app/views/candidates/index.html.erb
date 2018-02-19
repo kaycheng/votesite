@@ -1,6 +1,6 @@
 <h1>候選人名單</h1>
 
-<table>
+<table class="table">
   <thead>
     <tr>
       <th>投票</th>
@@ -14,7 +14,7 @@
   <tbody>
     <% @candidates.each do |candidate| %>
       <tr>
-        <td><%= link_to "投這位", vote_candidate_path(candidate),method: :post, data: {confirm: "Are you sure?"} %></td> 
+        <td><%= link_to "投這位", vote_candidate_path(candidate),method: :post, data: {confirm: "Are you sure?"}, class: "btn btn-danger btn-xs" %></td> 
         <td><%= candidate.name %>(年齡： <%= candidate.age %>歲)</td>
         <td><%= candidate.party %></td>
         <td><%= candidate.politics %></td>
@@ -28,7 +28,7 @@
   </tbody>
 </table>
 
-<%= link_to "建立候選人", new_candidate_path %> | 
+<%= link_to "建立候選人", new_candidate_path %> 
 
 
   
